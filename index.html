@@ -1,38 +1,131 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Landing Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.nationalgeographicla.com/files/styles/image_3200/public/nationalgeographic612887_0.jpg?w=1600&h=900&p=lefttop');
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .container img {
+            max-width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25d366;
+            color: #fff;
+            padding: 8px;  /* Ajusta el tamaño del botón según tus preferencias */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .whatsapp-icon {
+    width: 16px;  /* Ancho de la imagen de WhatsApp */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 2px;
+}
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Empresa de Turismo</h1>
-    <p>Tu aventura comienza aquí</p>
-  </div>
 
-  <div class="container">
-    <div class="section">
-      <h2>No se, contrata nuestros viajes o me muero xd</h2>
-      <p>Explora los mejores lugares de brasil</p>
-    </div>
+<div class="container">
+    <h1>Formulario de Contacto</h1>
+    <img src="https://img.freepik.com/vector-gratis/logotipo-viaje-detallado_23-2148616611.jpg" alt="Logo de la Empresa">
 
-    <div class="section">
-      <h2>Contacto</h2>
-      <p>Contáctanos para obtener más información.</p>
-      <form action="/contacto" method="POST">
+    <p>Dejanos tu mensaje y nos pondremos en contacto contigo pronto.</p>
+
+    <form action="/enviar" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
-  </div>
 
-  <div class="footer">
-    <p>&copy; 2023 Empresa de Turismo. Todos los derechos reservados.</p>
-  </div>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Icono de WhatsApp" class="whatsapp-icon">
+        Contáctanos por WhatsApp
+    </a>
+</div>
+
 </body>
 </html>
